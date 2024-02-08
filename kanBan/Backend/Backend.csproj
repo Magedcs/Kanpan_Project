@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>IntroSE.Kanban.Backend</RootNamespace>
+    <AssemblyName>IntroSE.Kanban.Backend</AssemblyName>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="log4net" />
+    <None Remove="ServiceLayer\ToReturn\" />
+    <None Remove="DataAccessLayer\" />
+    <None Remove="DataAccessLayer\DTOs\" />
+    <None Remove="System.Data.SQLite" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.14" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.116" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ServiceLayer\ToReturn\" />
+    <Folder Include="DataAccessLayer\DTOs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="kanban.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
